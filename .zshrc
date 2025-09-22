@@ -13,10 +13,20 @@ source ${ZDOTDIR:-${HOME}}/.zcomet/bin/zcomet.zsh
 zcomet load romkatv/powerlevel10k
 source ${ZDOTDIR:-${HOME}}/.p10k.zsh
 
+# history
+
+HISTSIZE=100000
+SAVEHIST=100000
+setopt SHARE_HISTORY
+setopt HIST_IGNORE_ALL_DUPS
+setopt EXTENDED_HISTORY
+
 # plugins
+
+zcomet fpath zsh-users/zsh-completions
 
 # last
 
-zcomet load zsh-users/zsh-syntax-highlighting
+zcomet load zdharma-continuum/fast-syntax-highlighting
 zcomet compinit
 

@@ -1,11 +1,10 @@
-# profile
+# base profile
 
 export EDITOR=vim
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-export GPG_TTY=$TTY
 
 # brew shellenv
 
@@ -17,3 +16,6 @@ eval "$(PATH_HELPER_ROOT="/opt/homebrew" /usr/libexec/path_helper -s)"
 [ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
+# extended profile
+
+export GPG_TTY=$TTY
