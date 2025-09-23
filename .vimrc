@@ -10,8 +10,9 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 " plugins
 call plug#begin()
 Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-commentary'
 call plug#end()
 
 " config
-nmap Y "+y
-vmap Y "+y
+set clipboard^=unnamed
+
