@@ -28,6 +28,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 
+zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
