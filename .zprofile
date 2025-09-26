@@ -13,5 +13,4 @@ eval "$(PATH_HELPER_ROOT="/opt/homebrew" /usr/libexec/path_helper -s)"
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}"
 
 export GPG_TTY=$TTY
-export LESSOPEN="|${XDG_CONFIG_HOME}/lesspipe/lessfilter %s"
 
