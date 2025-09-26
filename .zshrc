@@ -11,14 +11,8 @@ source ${ZDOTDIR:-${HOME}}/.p10k.zsh
 
 zcomet snippet OMZ::plugins/git/git.plugin.zsh
 zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
-zcomet load Freed-Wu/fzf-tab-source
-
 zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 zcomet load zsh-users/zsh-completions
-zcomet compinit
-
-zcomet load Aloxaf/fzf-tab
-zcomet load zdharma-continuum/fast-syntax-highlighting
 
 HISTFILE=${ZDOTDIR:-${HOME}}/.zsh_history
 HISTSIZE=100000
@@ -33,4 +27,12 @@ zle -N history-beginning-search-backward-end history-search-end
 zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
+
+zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
+zstyle ':fzf-tab:complete:*:options' fzf-preview
+zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
+
+zcomet compinit
+zcomet load Aloxaf/fzf-tab
+zcomet load zdharma-continuum/fast-syntax-highlighting
 
