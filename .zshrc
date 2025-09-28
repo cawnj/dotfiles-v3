@@ -17,7 +17,7 @@ source ${ZDOTDIR:-${HOME}}/.p10k.zsh
 zcomet snippet OMZ::plugins/git/git.plugin.zsh
 zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
 zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
-zcomet load zsh-users/zsh-completions
+zcomet fpath zsh-users/zsh-completions src
 
 # config
 
