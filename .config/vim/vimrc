@@ -11,8 +11,10 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin()
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " config
-set clipboard^=unnamed
+nnoremap Y "+y
+vnoremap Y "+y
 
