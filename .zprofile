@@ -6,6 +6,8 @@ export GPG_TTY=${TTY}
 
 export EDITOR=vim
 export PAGER=less
+export LESSOPEN="|${XDG_CONFIG_HOME}/lesspipe/lessfilter %s"
+export BAT_THEME="ansi"
 
 export HOMEBREW_PREFIX="/opt/homebrew"
 typeset -aU path
