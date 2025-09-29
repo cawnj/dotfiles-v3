@@ -51,8 +51,12 @@ zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 zstyle ':fzf-tab:complete:*:options' fzf-preview
 zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 
+## aliases
+alias cd="z"
+
 # load last
 zcomet compinit
 eval "$(zoxide init zsh)"
 zcomet load Aloxaf/fzf-tab
 zcomet load zdharma-continuum/fast-syntax-highlighting
+
