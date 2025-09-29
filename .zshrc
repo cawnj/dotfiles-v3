@@ -39,6 +39,13 @@ bindkey "^[[B" history-beginning-search-forward-end
 
 ## fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+_fzf_compgen_path() {
+  fd --type f --hidden --follow --exclude .git . $1
+}
+_fzf_compgen_dir() {
+  fd --type d --hidden --follow --exclude .git . $1
+}
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
 zstyle ':fzf-tab:complete:*:options' fzf-preview

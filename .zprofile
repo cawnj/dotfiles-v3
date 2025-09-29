@@ -6,6 +6,7 @@ export GPG_TTY=${TTY}
 
 export EDITOR=vim
 export PAGER=less
+export LESS="FRX"
 export LESSOPEN="|${XDG_CONFIG_HOME}/lesspipe/lessfilter %s"
 export BAT_THEME="ansi"
 
