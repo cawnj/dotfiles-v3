@@ -46,6 +46,6 @@ zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 
 # load last
 zcomet compinit
+eval "$(zoxide init zsh)"
 zcomet load Aloxaf/fzf-tab
 zcomet load zdharma-continuum/fast-syntax-highlighting
-
