@@ -22,6 +22,7 @@ brew "gnupg"
 
 # modern utils
 brew "bat"
+brew "bat-extras"
 brew "fd"
 brew "fzf"
 brew "ripgrep"

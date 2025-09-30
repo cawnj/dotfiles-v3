@@ -6,6 +6,9 @@ export GPG_TTY=${TTY}
 
 export EDITOR=vim
 export BAT_THEME="ansi"
+export BATMAN_IS_BEING_MANPAGER="yes"
+export MANPAGER="batman"
+export MANROFFOPT="-c"
 
 export HOMEBREW_PREFIX="/opt/homebrew"
 typeset -aU path
