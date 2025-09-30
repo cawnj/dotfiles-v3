@@ -19,16 +19,14 @@ zcomet snippet OMZ::lib/history.zsh
 zcomet snippet OMZ::lib/key-bindings.zsh
 zcomet snippet OMZ::plugins/fzf/fzf.plugin.zsh
 zcomet snippet OMZ::plugins/git/git.plugin.zsh
+zcomet snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
 
 # fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-_fzf_compgen_path() {
-  fd --type f --hidden --follow --exclude .git . $1
-}
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude .git . $1
-}
+_fzf_compgen_path() { fd --type f --hidden --follow --exclude .git . $1 }
+_fzf_compgen_dir() { fd --type d --hidden --follow --exclude .git . $1 }
 
 # completions
 zstyle ':completion:*' menu select
@@ -43,7 +41,6 @@ alias ls="ls --color=auto"
 
 # load last
 zcomet compinit
-eval "$(zoxide init zsh)"
 zcomet load Aloxaf/fzf-tab
 zcomet load zdharma-continuum/fast-syntax-highlighting
 
