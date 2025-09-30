@@ -17,6 +17,7 @@ source ${ZDOTDIR:-${HOME}}/.p10k.zsh
 zcomet fpath zsh-users/zsh-completions src
 zcomet snippet OMZ::lib/history.zsh
 zcomet snippet OMZ::lib/key-bindings.zsh
+zcomet snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 zcomet snippet OMZ::plugins/fzf/fzf.plugin.zsh
 zcomet snippet OMZ::plugins/git/git.plugin.zsh
 zcomet snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
@@ -27,13 +28,14 @@ export FZF_ALT_C_COMMAND='fd --type d --strip-cwd-prefix --hidden --follow --exc
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 _fzf_compgen_path() { fd --type f --hidden --follow --exclude .git . $1 }
 _fzf_compgen_dir() { fd --type d --hidden --follow --exclude .git . $1 }
+fe() {
+  IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0 --preview="bat --color=always {}"))
+  [[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
 
 # completions
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${LS_COLORS-}"
-
-# keybinds
-bindkey -v
 
 # aliases
 alias cd="z"
