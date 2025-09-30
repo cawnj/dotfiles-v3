@@ -1,17 +1,34 @@
-brew "zsh"
-brew "git"
+# essentials
 cask "ghostty"
+brew "zsh"
 brew "tmux"
 brew "vim"
-brew "fzf"
-brew "lesspipe"
+brew "git"
+
+# gnu utils
+brew "coreutils"
+brew "diffutils"
+brew "findutils"
+brew "gawk"
+brew "gnu-sed"
+brew "gnu-tar"
+brew "gnu-which"
+brew "grep"
+brew "gzip"
+brew "wget"
+brew "bash"
+brew "less"
+brew "gnupg"
+
+# modern utils
 brew "bat"
-brew "eza"
-brew "ripgrep"
 brew "fd"
+brew "fzf"
+brew "ripgrep"
+brew "zoxide"
+
+# everything else
+brew "diff-so-fancy"
 brew "tldr"
 brew "asdf"
-brew "gpg"
-brew "gawk"
-brew "zoxide"
-brew "diff-so-fancy"
+

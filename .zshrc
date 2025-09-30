@@ -14,30 +14,13 @@ zcomet load romkatv/powerlevel10k
 source ${ZDOTDIR:-${HOME}}/.p10k.zsh
 
 # plugins
-zcomet snippet OMZ::plugins/git/git.plugin.zsh
-zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/key-bindings.zsh
-zcomet snippet https://github.com/junegunn/fzf/blob/master/shell/completion.zsh
 zcomet fpath zsh-users/zsh-completions src
+zcomet snippet OMZ::lib/history.zsh
+zcomet snippet OMZ::lib/key-bindings.zsh
+zcomet snippet OMZ::plugins/fzf/fzf.plugin.zsh
+zcomet snippet OMZ::plugins/git/git.plugin.zsh
 
-# config
-
-## history
-HISTFILE=${ZDOTDIR:-${HOME}}/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt SHARE_HISTORY
-setopt HIST_IGNORE_ALL_DUPS
-setopt EXTENDED_HISTORY
-
-## keybinds
-bindkey -v
-autoload -U history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^[[A" history-beginning-search-backward-end
-bindkey "^[[B" history-beginning-search-forward-end
-
-## fzf
+# fzf
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 _fzf_compgen_path() {
@@ -46,13 +29,17 @@ _fzf_compgen_path() {
 _fzf_compgen_dir() {
   fd --type d --hidden --follow --exclude .git . $1
 }
-zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:*:*' fzf-preview 'less ${(Q)realpath}'
-zstyle ':fzf-tab:complete:*:options' fzf-preview
-zstyle ':fzf-tab:complete:*:argument-1' fzf-preview
 
-## aliases
+# completions
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors "${LS_COLORS-}"
+
+# keybinds
+bindkey -v
+
+# aliases
 alias cd="z"
+alias ls="ls --color=auto"
 
 # load last
 zcomet compinit

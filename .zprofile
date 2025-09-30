@@ -5,9 +5,6 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 export GPG_TTY=${TTY}
 
 export EDITOR=vim
-export PAGER=less
-export LESS="FRX"
-export LESSOPEN="|${XDG_CONFIG_HOME}/lesspipe/lessfilter %s"
 export BAT_THEME="ansi"
 
 export HOMEBREW_PREFIX="/opt/homebrew"
@@ -15,6 +12,7 @@ typeset -aU path
 path=(
   "${HOME}/.local/bin"
   "${HOME}/.asdf/shims"
+  ${HOMEBREW_PREFIX}/opt/*/libexec/gnubin(N/)
   "${HOMEBREW_PREFIX}/bin"
   "${HOMEBREW_PREFIX}/sbin"
   $path
