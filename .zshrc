@@ -1,16 +1,17 @@
+# instant prompt
+source $XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh
+
 # zcomet
 if [[ ! -f $HOME/.zcomet/bin/zcomet.zsh ]]; then
     git clone https://github.com/agkozak/zcomet.git $HOME/.zcomet/bin
 fi
 source $HOME/.zcomet/bin/zcomet.zsh
 
-# plugins
-zcomet load romkatv/zsh-bench
-export PATH="/Users/cj-test/.zcomet/repos/romkatv/zsh-bench:$PATH"
-
+# p10k
 zcomet load romkatv/powerlevel10k
 source $HOME/.p10k.zsh
 
+# plugins
 zcomet load romkatv/zsh-defer
 zcomet load romkatv/zsh-no-ps2
 
