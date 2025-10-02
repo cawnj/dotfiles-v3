@@ -2,14 +2,14 @@
 source $XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh
 
 # zcomet
-if [[ ! -f $HOME/.zcomet/bin/zcomet.zsh ]]; then
-    git clone https://github.com/agkozak/zcomet.git $HOME/.zcomet/bin
+if [[ ! -f $ZDOTDIR/.zcomet/bin/zcomet.zsh ]]; then
+    git clone https://github.com/agkozak/zcomet.git $ZDOTDIR/.zcomet/bin
 fi
-source $HOME/.zcomet/bin/zcomet.zsh
+source $ZDOTDIR/.zcomet/bin/zcomet.zsh
 
 # p10k
 zcomet load romkatv/powerlevel10k
-source $HOME/.p10k.zsh
+source $ZDOTDIR/.p10k.zsh
 
 # plugins
 zcomet load romkatv/zsh-defer
@@ -30,7 +30,7 @@ zsh-defer zcomet snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
 zsh-defer zcomet load zdharma-continuum/fast-syntax-highlighting
 
 # config
-HISTFILE=$HOME/.zsh_history
+HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt SHARE_HISTORY
