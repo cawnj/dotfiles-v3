@@ -17,10 +17,10 @@ zcomet load romkatv/zsh-no-ps2
 
 zcomet snippet OMZ::lib/key-bindings.zsh
 zcomet snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
-zcomet load junegunn/fzf shell key-bindings.zsh
+zcomet load junegunn/fzf@v0.65.2 shell key-bindings.zsh
 
 zcomet load zsh-users/zsh-completions
-zcomet load junegunn/fzf shell completion.zsh
+zcomet load junegunn/fzf@v0.65.2 shell completion.zsh
 zcomet snippet OMZ::lib/git.zsh
 zsh-defer zcomet snippet OMZ::plugins/git/git.plugin.zsh
 
