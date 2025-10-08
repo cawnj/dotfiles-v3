@@ -30,3 +30,5 @@ brew "diff-so-fancy"
 brew "tldr"
 brew "asdf"
 
+# tooling
+brew "just"
