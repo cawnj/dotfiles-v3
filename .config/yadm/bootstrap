@@ -12,3 +12,6 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 fi
+
+# set email for yadm commits
+yadm gitconfig user.email "conor@cawnj.dev"
