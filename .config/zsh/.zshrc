@@ -42,3 +42,4 @@ zstyle ":completion:*" cache-path "$XDG_CACHE_HOME/.zcompcache"
 # aliases
 alias ls="ls --color=auto"
 alias ll="ls -la"
+alias assume=". assume" # common-fate/granted
