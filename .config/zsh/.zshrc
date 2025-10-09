@@ -29,15 +29,16 @@ zsh-defer zcomet load Aloxaf/fzf-tab
 zsh-defer zcomet snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
 zsh-defer zcomet load zdharma-continuum/fast-syntax-highlighting
 
-# config
+# history
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
 setopt SHARE_HISTORY
 
+# completions
 zstyle ":completion:*" use-cache on
 zstyle ":completion:*" cache-path "$XDG_CACHE_HOME/.zcompcache"
 
+# aliases
 alias ls="ls --color=auto"
 alias ll="ls -la"
-

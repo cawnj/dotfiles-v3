@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# brew bundle if on macos
 system_type=$(uname -s)
 if [ "$system_type" = "Darwin" ]; then
   if ! command -v brew >/dev/null 2>&1; then
@@ -11,4 +12,3 @@ if [ "$system_type" = "Darwin" ]; then
     brew bundle --global
   fi
 fi
-

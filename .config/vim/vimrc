@@ -15,7 +15,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf'
 call plug#end()
 
-" config
+" yank to system clipboard
 nnoremap Y "+y
 vnoremap Y "+y
-
