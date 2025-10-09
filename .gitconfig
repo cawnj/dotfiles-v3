@@ -1,9 +1,13 @@
 [user]
-	name = Conor Joyce
-	email = conor@cawnj.dev
+    name = Conor Joyce
+    email = conor@cawnj.dev
+[commit]
+    gpgSign = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RF
+    pager = diff-so-fancy | less --tabs=4 -RF
 [interactive]
-	diffFilter = diff-so-fancy --patch
+    diffFilter = diff-so-fancy --patch
+[include]
+    path = ~/.override.gitconfig
