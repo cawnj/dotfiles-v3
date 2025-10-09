@@ -33,3 +33,4 @@ brew "asdf"
 # tooling
 brew "just"
 brew "common-fate/granted/granted"
+brew "sdkman/tap/sdkman-cli"

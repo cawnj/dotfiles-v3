@@ -29,6 +29,9 @@ zsh-defer zcomet load Aloxaf/fzf-tab
 zsh-defer zcomet snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
 zsh-defer zcomet load zdharma-continuum/fast-syntax-highlighting
 
+# tools
+zsh-defer source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=100000

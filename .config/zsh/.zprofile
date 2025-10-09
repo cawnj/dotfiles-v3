@@ -16,11 +16,13 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
+# sdkman
+export SDKMAN_DIR=$HOMEBREW_PREFIX/opt/sdkman-cli/libexec
+
 # path
 typeset -aU path fpath
 path=(
-    $HOME/.asdf/shims(N/)
-    $HOME/{.orbstack/bin,.local/bin}(N/)
+    $HOME/{.asdf/shims,.orbstack/bin,.local/bin}(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
     $HOMEBREW_PREFIX/{bin,sbin}(N/)
     $path
