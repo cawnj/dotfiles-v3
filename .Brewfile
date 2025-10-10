@@ -29,8 +29,10 @@ brew "zoxide"
 brew "diff-so-fancy"
 brew "tldr"
 brew "asdf"
+brew "httpie"
 
 # tooling
 brew "just"
 brew "common-fate/granted/granted"
 brew "sdkman/tap/sdkman-cli"
+brew "git-lfs"
