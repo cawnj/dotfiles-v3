@@ -19,10 +19,14 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # sdkman
 export SDKMAN_DIR=$HOMEBREW_PREFIX/opt/sdkman-cli/libexec
 
+# pnpm
+export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+
 # path
 typeset -aU path fpath
 path=(
-    $HOME/{.asdf/shims,.orbstack/bin,.local/bin}(N/)
+    $HOME/{.local/bin,.orbstack/bin}(N/)
+    $HOME/{.local/share/pnpm,.asdf/shims}(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
     $HOMEBREW_PREFIX/{bin,sbin}(N/)
     $path
