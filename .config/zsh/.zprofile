@@ -16,10 +16,8 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
-# sdkman
+# tooling 
 export SDKMAN_DIR=$HOMEBREW_PREFIX/opt/sdkman-cli/libexec
-
-# pnpm
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 
 # path
@@ -27,6 +25,7 @@ typeset -aU path fpath
 path=(
     $HOME/{.local/bin,.orbstack/bin}(N/)
     $HOME/{.local/share/pnpm,.asdf/shims}(N/)
+    $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
     $HOMEBREW_PREFIX/{bin,sbin}(N/)
     $path
