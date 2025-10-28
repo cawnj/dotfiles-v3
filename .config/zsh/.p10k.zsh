@@ -15,8 +15,10 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   status                  # exit code of the last command
   command_execution_time  # duration of the last command
   background_jobs         # presence of background jobs
-  # direnv                # direnv status (https://direnv.net/)
+  pulumi                  # pulumi stack (https://www.pulumi.com/)
+  aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
   asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+  # direnv                # direnv status (https://direnv.net/)
   # virtualenv            # python virtual environment (https://docs.python.org/3/library/venv.html)
   # anaconda              # conda environment (https://conda.io/)
   # pyenv                 # python environment (https://github.com/pyenv/pyenv)
@@ -45,7 +47,6 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   # kubecontext           # current kubernetes context (https://kubernetes.io/)
   # terraform             # terraform workspace (https://www.terraform.io)
   # terraform_version     # terraform version (https://www.terraform.io)
-  aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
   # aws_eb_env            # aws elastic beanstalk environment (https://aws.amazon.com/elasticbeanstalk/)
   # azure                 # azure account name (https://docs.microsoft.com/en-us/cli/azure)
   # gcloud                # google cloud cli account and project (https://cloud.google.com/)
@@ -97,4 +98,39 @@ unset POWERLEVEL9K_AZURE_SHOW_ON_COMMAND
 unset POWERLEVEL9K_GCLOUD_SHOW_ON_COMMAND
 unset POWERLEVEL9K_GOOGLE_APP_CRED_SHOW_ON_COMMAND
 
+typeset -g POWERLEVEL9K_AWS_CONTENT_EXPANSION='${P9K_AWS_PROFILE//\%/%%}'
+
 typeset -g POWERLEVEL9K_VCS_MAX_SYNC_LATENCY_SECONDS=0.003
+
+# ---------------
+# custom segments
+# ---------------
+
+typeset -g POWERLEVEL9K_PULUMI_FOREGROUND='magenta'
+typeset -g POWERLEVEL9K_PULUMI_VISUAL_IDENTIFIER_EXPANSION=''
+typeset -g _p10k_pulumi_stack= _p10k_pulumi_dir=$PWD
+_p10k_pulumi_async() {
+  cd $1
+  export AWS_PROFILE=$2
+  pulumi stack --show-name 2>/dev/null
+}
+_p10k_pulumi_callback() {
+  # echo "_p10k_pulumi_callback: jobName=$1, returnCode=$2, stdout=$3, executionTime=$4, stderr=$5, hasNextResult=$6" >> /tmp/p10k-pulumi.log
+  _p10k_pulumi_stack="$3"
+  p10k display -r
+}
+prompt_pulumi() {
+  emulate -L zsh -o extended_glob
+  (( $+commands[pulumi] )) || return 1
+  [[ -f Pulumi.yaml || -f Pulumi.yml ]] || return 1
+  async_job _p10k_pulumi_worker _p10k_pulumi_async $PWD $AWS_PROFILE
+  [[ $_p10k_pulumi_dir == $PWD ]] || {
+    _p10k_pulumi_stack=
+    _p10k_pulumi_dir=$PWD
+  }
+  p10k segment -e -t '$_p10k_pulumi_stack'
+}
+async_stop_worker         _p10k_pulumi_worker
+async_start_worker        _p10k_pulumi_worker -u
+async_unregister_callback _p10k_pulumi_worker
+async_register_callback   _p10k_pulumi_worker _p10k_pulumi_callback

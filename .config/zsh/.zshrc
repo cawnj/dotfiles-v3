@@ -8,6 +8,7 @@ fi
 source $ZDOTDIR/.zcomet/bin/zcomet.zsh
 
 # p10k
+zcomet load mafredri/zsh-async
 zcomet load romkatv/powerlevel10k
 source $ZDOTDIR/.p10k.zsh
 
