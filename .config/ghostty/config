@@ -1,5 +1,5 @@
 command = /opt/homebrew/bin/tmux new -A
-theme = Tomorrow Night 
+theme = Tomorrow Night
 font-size = 16
-link-url = true
 font-feature = -calt
+link-url = true
