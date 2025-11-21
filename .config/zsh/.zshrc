@@ -35,9 +35,10 @@ zsh-defer source "${SDKMAN_DIR}/bin/sdkman-init.sh"
 
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-setopt SHARE_HISTORY
+HISTSIZE=1000000000
+SAVEHIST=1000000000
+setopt extended_history
+setopt share_history
 
 # completions
 zstyle ":completion:*" use-cache on
