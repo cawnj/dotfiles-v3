@@ -39,7 +39,7 @@ HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=1000000000
 SAVEHIST=1000000000
 setopt extended_history
-setopt share_history
+setopt inc_append_history_time
 
 # completions
 zstyle ":completion:*" use-cache on
