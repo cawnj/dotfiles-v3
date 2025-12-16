@@ -26,6 +26,7 @@ typeset -aU path fpath
 path=(
     $HOME/{.local/bin,.orbstack/bin}(N/)
     $HOME/{.local/share/pnpm,.asdf/shims}(N/)
+    $HOME/.dotnet/tools(N/)
     /usr/local/share/dotnet(N/)
     $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
