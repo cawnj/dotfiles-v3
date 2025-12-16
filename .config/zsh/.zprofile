@@ -19,12 +19,14 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # tooling 
 export SDKMAN_DIR=$HOMEBREW_PREFIX/opt/sdkman-cli/libexec
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # path
 typeset -aU path fpath
 path=(
     $HOME/{.local/bin,.orbstack/bin}(N/)
     $HOME/{.local/share/pnpm,.asdf/shims}(N/)
+    /usr/local/share/dotnet(N/)
     $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
     $HOMEBREW_PREFIX/{bin,sbin}(N/)
