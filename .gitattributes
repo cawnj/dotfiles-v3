@@ -1,0 +1,2 @@
+# disable diffs for package-lock.json
+package-lock.json -diff
