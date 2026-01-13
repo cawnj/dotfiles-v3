@@ -24,9 +24,12 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 # path
 typeset -aU path fpath
 path=(
-    $HOME/{.local/bin,.orbstack/bin}(N/)
-    $HOME/{.local/share/pnpm,.asdf/shims}(N/)
+    $HOME/.local/bin(N/)
+    $HOME/.orbstack/bin(N/)
+    $HOME/.local/share/pnpm(N/)
+    $HOME/.asdf/shims(N/)
     $HOME/.dotnet/tools(N/)
+    $HOME/.asdf/installs/rust/*/bin(N/)
     /usr/local/share/dotnet(N/)
     $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)

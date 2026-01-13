@@ -3,3 +3,4 @@ python 3.11.14
 java temurin-21.0.8+9.0.LTS
 ruby 3.4.7
 terraform 1.13.4
+rust 1.92.0
