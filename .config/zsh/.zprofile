@@ -2,7 +2,8 @@
 export GPG_TTY=$TTY
 export EDITOR=vim
 export PAGER=less
-export MANPAGER="col -xbf | bat -p -l man"
+export MANPAGER="env BATMAN_IS_BEING_MANPAGER=yes bash batman"
+export MANROFFOPT=-c
 export BAT_THEME=ansi
 
 # brew
