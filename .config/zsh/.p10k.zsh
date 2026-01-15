@@ -18,6 +18,7 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   pulumi                  # pulumi stack (https://www.pulumi.com/)
   aws                     # aws profile (https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html)
   asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
+  dotnet_version          # .NET version (https://dotnet.microsoft.com)
   # direnv                # direnv status (https://direnv.net/)
   # virtualenv            # python virtual environment (https://docs.python.org/3/library/venv.html)
   # anaconda              # conda environment (https://conda.io/)
@@ -29,7 +30,6 @@ typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   # node_version          # node.js version
   # go_version            # go version (https://golang.org)
   # rust_version          # rustc version (https://www.rust-lang.org)
-  # dotnet_version        # .NET version (https://dotnet.microsoft.com)
   # php_version           # php version (https://www.php.net/)
   # laravel_version       # laravel php framework version (https://laravel.com/)
   # java_version          # java version (https://www.java.com/)
