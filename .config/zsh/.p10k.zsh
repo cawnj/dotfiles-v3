@@ -112,7 +112,7 @@ typeset -g _p10k_pulumi_stack= _p10k_pulumi_dir=$PWD
 _p10k_pulumi_async() {
   cd $1
   export AWS_PROFILE=$2
-  pulumi stack --show-name 2>/dev/null
+  pulumi stack --show-name
 }
 _p10k_pulumi_callback() {
   # echo "_p10k_pulumi_callback: jobName=$1, returnCode=$2, stdout=$3, executionTime=$4, stderr=$5, hasNextResult=$6" >> /tmp/p10k-pulumi.log
