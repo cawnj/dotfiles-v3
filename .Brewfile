@@ -32,12 +32,18 @@ brew "tldr"
 brew "asdf"
 brew "httpie"
 
-# tooling
+# dev tools
 brew "just"
-brew "common-fate/granted/granted"
-brew "sdkman/tap/sdkman-cli"
 brew "git-lfs"
-brew "mysql-client"
+cask "claude-code"
+
+# aws
+brew "awscli"
+brew "session-manager-plugin"
+brew "granted", args: ["HEAD"]
 brew "keidarcy/tap/e1s"
+
+# sdks
+brew "sdkman/tap/sdkman-cli"
 cask "isen-ng/dotnet-sdk-versions/dotnet-sdk10"
 cask "isen-ng/dotnet-sdk-versions/dotnet-sdk8"
