@@ -39,7 +39,7 @@ cask "claude-code"
 
 # aws
 brew "awscli"
-brew "session-manager-plugin"
+cask "session-manager-plugin"
 brew "granted", args: ["HEAD"]
 brew "keidarcy/tap/e1s"
 
