@@ -1,6 +1,7 @@
-DefaultBrowser = "FIREFOX"
-CustomBrowserPath = "/opt/homebrew/bin/firefox"
-CustomSSOBrowserPath = "/opt/homebrew/bin/firefox"
+DefaultBrowser = "CHROMIUM"
+CustomBrowserPath = "/Applications/Helium.app/Contents/MacOS/Helium"
+CustomSSOBrowserPath = "/Applications/Helium.app/Contents/MacOS/Helium"
+Ordering = ""
 CredentialProcessAutoLogin = true
 
 [Keyring]
