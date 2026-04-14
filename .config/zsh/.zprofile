@@ -32,6 +32,7 @@ path=(
     $HOME/.dotnet/tools(N/)
     $HOME/.asdf/installs/rust/*/bin(N/)
     /usr/local/share/dotnet(N/)
+    $HOMEBREW_PREFIX/opt/libpq/bin(N/)
     $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
     $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
     $HOMEBREW_PREFIX/{bin,sbin}(N/)

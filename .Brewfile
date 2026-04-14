@@ -47,3 +47,7 @@ brew "keidarcy/tap/e1s"
 brew "sdkman/tap/sdkman-cli"
 cask "isen-ng/dotnet-sdk-versions/dotnet-sdk10"
 cask "isen-ng/dotnet-sdk-versions/dotnet-sdk8"
+
+# clients
+brew "mysql-client"
+brew "libpq"
