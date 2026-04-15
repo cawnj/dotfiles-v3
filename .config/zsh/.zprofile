@@ -41,6 +41,7 @@ path=(
 fpath=(
     /Applications/OrbStack.app/Contents/{MacOS,Resources}/completions/zsh(N/)
     $HOME/.granted/zsh_autocomplete/assume(N/)
+    $XDG_DATA_HOME/zsh-claudecode-completion(N/)
     $HOMEBREW_PREFIX/share/zsh/site-functions
     $fpath
 )
