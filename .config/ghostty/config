@@ -1,4 +1,4 @@
-command = /opt/homebrew/bin/tmux new -A
+command = /opt/homebrew/bin/tmux new -A -s main
 theme = Tomorrow Night
 font-size = 16
 font-feature = -calt
