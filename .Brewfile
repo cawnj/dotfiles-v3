@@ -36,7 +36,8 @@ brew "httpie"
 brew "just"
 brew "git-lfs"
 cask "claude-code"
-brew "workmux"
+brew "raine/claude-history/claude-history"
+brew "raine/workmux/workmux"
 brew "sesh"
 
 # aws
