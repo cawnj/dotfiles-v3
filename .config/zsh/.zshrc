@@ -33,6 +33,7 @@ zsh-defer zcomet load zdharma-continuum/fast-syntax-highlighting
 # tools
 zsh-defer source "$SDKMAN_DIR/bin/sdkman-init.sh"
 zsh-defer source "$HOME/.asdf/plugins/java/set-java-home.zsh"
+zsh-defer eval "$(workmux completions zsh)"
 
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
@@ -49,5 +50,4 @@ zstyle ":completion:*" cache-path "$XDG_CACHE_HOME/.zcompcache"
 alias ls="ls --color=auto"
 alias ll="ls -la"
 alias assume=". assume" # common-fate/granted
-
-if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+alias wm="workmux"

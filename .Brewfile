@@ -36,8 +36,8 @@ brew "httpie"
 brew "just"
 brew "git-lfs"
 cask "claude-code"
-brew "worktrunk"
-brew "tmux-sessionizer"
+brew "workmux"
+brew "sesh"
 
 # aws
 brew "awscli"
