@@ -1,0 +1,7 @@
+nerdfont: true
+status_format: false
+
+panes:
+  - command: claude 
+  - split: horizontal
+    focus: true
