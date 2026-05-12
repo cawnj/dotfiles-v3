@@ -4,6 +4,7 @@
     "MAX_THINKING_TOKENS": "1024"
   },
   "includeCoAuthoredBy": false,
+  "model": "opus[1m]",
   "hooks": {
     "Notification": [
       {
@@ -49,7 +50,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "bunx -y ccstatusline@latest",
+    "command": "ccstatusline",
     "padding": 0,
     "refreshInterval": 10
   },
@@ -68,6 +69,5 @@
   "effortLevel": "medium",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-daltonized",
-  "editorMode": "vim",
-  "model": "opus[1m]"
+  "editorMode": "vim"
 }

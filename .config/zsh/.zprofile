@@ -27,6 +27,7 @@ typeset -aU path fpath
 path=(
     $HOME/.local/bin(N/)
     $HOME/.orbstack/bin(N/)
+    $HOME/.cache/.bun/bin(N/)
     $HOME/.local/share/pnpm(N/)
     $HOME/.asdf/shims(N/)
     $HOME/.dotnet/tools(N/)

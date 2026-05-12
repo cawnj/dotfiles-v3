@@ -8,27 +8,22 @@
         "color": "cyan"
       },
       {
+        "id": "f1b22480-e810-4bdf-b1eb-e525c15a8c40",
+        "type": "thinking-effort"
+      },
+      {
         "id": "3",
         "type": "context-length",
         "color": "brightBlack"
-      },
-      {
-        "id": "5",
-        "type": "git-branch",
-        "color": "magenta"
-      },
-      {
-        "id": "7",
-        "type": "git-changes",
-        "color": "yellow"
       }
     ],
     [],
     []
   ],
-  "flexMode": "full-minus-40",
+  "flexMode": "full-until-compact",
   "compactThreshold": 60,
-  "colorLevel": 2,
+  "colorLevel": 1,
+  "defaultPadding": " ",
   "inheritSeparatorColors": false,
   "globalBold": false,
   "minimalistMode": false,
@@ -42,9 +37,8 @@
     ],
     "startCaps": [],
     "endCaps": [],
+    "theme": "nord-aurora",
     "autoAlign": false,
-    "continueThemeAcrossLines": false,
-    "theme": "nord-aurora"
-  },
-  "defaultPadding": " "
+    "continueThemeAcrossLines": false
+  }
 }
