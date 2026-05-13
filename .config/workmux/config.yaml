@@ -9,3 +9,5 @@ panes:
 
 sandbox:
   enabled: true
+  container:
+    runtime: docker
