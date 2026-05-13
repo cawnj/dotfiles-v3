@@ -67,7 +67,7 @@
     }
   },
   "effortLevel": "medium",
-  "tui": "default",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-daltonized",
   "editorMode": "vim",
