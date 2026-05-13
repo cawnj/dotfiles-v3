@@ -10,6 +10,7 @@ panes:
     focus: true
 
 sandbox:
-  enabled: true
+  enabled: false
+  agent_config_dir: ~/.claude-sandbox
   container:
     runtime: docker
