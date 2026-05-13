@@ -1,7 +1,11 @@
 nerdfont: true
 status_format: false
+agent: claude
 
 panes:
-  - command: claude 
+  - command: <agent> 
   - split: horizontal
     focus: true
+
+sandbox:
+  enabled: true
