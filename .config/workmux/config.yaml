@@ -1,6 +1,8 @@
 nerdfont: true
-status_format: false
 agent: claude
+
+# disable automatic tmux format modification
+status_format: false
 
 panes:
   - command: <agent> 
