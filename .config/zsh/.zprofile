@@ -28,6 +28,7 @@ path=(
     $HOME/.local/bin(N/)
     $HOME/.orbstack/bin(N/)
     $HOME/.cache/.bun/bin(N/)
+    $PNPM_HOME/bin(N/)
     $HOME/.asdf/shims(N/)
     $HOME/.dotnet/tools(N/)
     $HOME/.asdf/installs/rust/*/bin(N/)
