@@ -28,10 +28,10 @@ path=(
     $HOME/.local/bin(N/)
     $HOME/.orbstack/bin(N/)
     $HOME/.cache/.bun/bin(N/)
-    $HOME/.local/share/pnpm(N/)
     $HOME/.asdf/shims(N/)
     $HOME/.dotnet/tools(N/)
     $HOME/.asdf/installs/rust/*/bin(N/)
+    $SDKMAN_DIR/candidates/grails/current/bin(N/)
     /usr/local/share/dotnet(N/)
     $HOMEBREW_PREFIX/opt/libpq/bin(N/)
     $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
@@ -42,7 +42,7 @@ path=(
 fpath=(
     /Applications/OrbStack.app/Contents/{MacOS,Resources}/completions/zsh(N/)
     $HOME/.granted/zsh_autocomplete/assume(N/)
-    $XDG_DATA_HOME/zsh-claudecode-completion(N/)
+    $XDG_DATA_HOME/zsh-completions(N/)
     $HOMEBREW_PREFIX/share/zsh/site-functions
     $fpath
 )

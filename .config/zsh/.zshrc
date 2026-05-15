@@ -21,6 +21,7 @@ zcomet snippet OMZ::plugins/vi-mode/vi-mode.plugin.zsh
 zcomet load junegunn/fzf@v0.65.2 shell key-bindings.zsh
 
 zcomet load zsh-users/zsh-completions
+zcomet fpath wbingli/zsh-claudecode-completion
 zcomet load junegunn/fzf@v0.65.2 shell completion.zsh
 zcomet snippet OMZ::lib/git.zsh
 zsh-defer zcomet snippet OMZ::plugins/git/git.plugin.zsh
@@ -31,9 +32,7 @@ zsh-defer zcomet snippet OMZ::plugins/zoxide/zoxide.plugin.zsh
 zsh-defer zcomet load zdharma-continuum/fast-syntax-highlighting
 
 # tools
-zsh-defer source "$SDKMAN_DIR/bin/sdkman-init.sh"
 zsh-defer source "$HOME/.asdf/plugins/java/set-java-home.zsh"
-zsh-defer eval "$(workmux completions zsh)"
 
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
