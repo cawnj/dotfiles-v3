@@ -39,6 +39,7 @@ cask "claude-code"
 brew "raine/workmux/workmux"
 brew "sesh"
 brew "datadog-labs/pack/pup"
+brew "pulumi"
 
 # aws
 brew "awscli"
