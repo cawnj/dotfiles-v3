@@ -5,9 +5,13 @@ agent: claude
 status_format: false
 
 panes:
-  - command: <agent> 
+  - command: <agent>
   - split: horizontal
     focus: true
+
+files:
+  symlink:
+    - docs/superpowers
 
 sandbox:
   enabled: false
