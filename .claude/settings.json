@@ -69,5 +69,9 @@
   "skipAutoPermissionPrompt": true,
   "permissions": {
     "defaultMode": "auto"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "/Users/cj/.claude/statusline.sh"
   }
 }
