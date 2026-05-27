@@ -44,7 +44,7 @@ brew "pulumi"
 # aws
 brew "awscli"
 cask "session-manager-plugin"
-brew "granted", args: ["HEAD"]
+brew "granted"
 brew "keidarcy/tap/e1s"
 
 # sdks

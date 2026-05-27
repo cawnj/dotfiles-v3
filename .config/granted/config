@@ -1,8 +1,10 @@
-DefaultBrowser = "CHROMIUM"
-CustomBrowserPath = "/Applications/Helium.app/Contents/MacOS/Helium"
+DefaultBrowser = "FIREFOX"
+CustomBrowserPath = "/Applications/Firefox.app/Contents/MacOS/firefox"
 CustomSSOBrowserPath = "/Applications/Helium.app/Contents/MacOS/Helium"
 Ordering = ""
+DisableUsageTips = true
 CredentialProcessAutoLogin = true
+UseAuthorizationCode = true
 
 [Keyring]
   Backend = "keychain"
