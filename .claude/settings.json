@@ -68,7 +68,10 @@
   "verbose": false,
   "skipAutoPermissionPrompt": true,
   "permissions": {
-    "defaultMode": "auto"
+    "defaultMode": "auto",
+    "ask": [
+      "Bash(aws*)"
+    ]
   },
   "statusLine": {
     "type": "command",
