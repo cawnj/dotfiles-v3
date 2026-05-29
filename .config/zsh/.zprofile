@@ -21,6 +21,7 @@ export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 export SDKMAN_DIR=$HOMEBREW_PREFIX/opt/sdkman-cli/libexec
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+export UseSharedCompilation=false  # disable Roslyn compile server
 
 # path
 typeset -aU path fpath
