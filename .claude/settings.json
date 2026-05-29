@@ -4,6 +4,12 @@
     "MAX_THINKING_TOKENS": "1024"
   },
   "includeCoAuthoredBy": false,
+  "permissions": {
+    "ask": [
+      "Bash(aws*)"
+    ],
+    "defaultMode": "auto"
+  },
   "model": "opus[1m]",
   "hooks": {
     "Notification": [
@@ -48,6 +54,10 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "~/.claude/statusline.sh"
+  },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
     "caveman@caveman": true
@@ -66,15 +76,5 @@
   "theme": "dark-daltonized",
   "editorMode": "vim",
   "verbose": false,
-  "skipAutoPermissionPrompt": true,
-  "permissions": {
-    "defaultMode": "auto",
-    "ask": [
-      "Bash(aws*)"
-    ]
-  },
-  "statusLine": {
-    "type": "command",
-    "command": "~/.claude/statusline.sh"
-  }
+  "skipAutoPermissionPrompt": true
 }
