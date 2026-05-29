@@ -2,24 +2,22 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-    <key>Label</key>
-    <string>com.local.KeyRemapping</string>
-
-    <!-- Remap Caps Lock (0x700000039) to Left Control (0x7000000E0) -->
-    <key>ProgramArguments</key>
-    <array>
-        <string>/usr/bin/hidutil</string>
-        <string>property</string>
-        <string>--set</string>
-        <string>{"UserKeyMapping":[
+	<key>Label</key>
+	<string>com.local.KeyRemapping</string>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/hidutil</string>
+		<string>property</string>
+		<string>--set</string>
+		<!-- Remap Caps Lock (0x700000039) to Left Control (0x7000000E0) -->
+		<string>{"UserKeyMapping":[
             {
               "HIDKeyboardModifierMappingSrc": 0x700000039,
               "HIDKeyboardModifierMappingDst": 0x7000000E0
             }
         ]}</string>
-    </array>
-
-    <key>RunAtLoad</key>
-    <true/>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
 </dict>
 </plist>

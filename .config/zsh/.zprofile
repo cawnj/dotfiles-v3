@@ -17,34 +17,34 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
 export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 
-# tooling 
+# tooling
 export SDKMAN_DIR=$HOMEBREW_PREFIX/opt/sdkman-cli/libexec
 export PNPM_HOME="$XDG_DATA_HOME/pnpm"
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
-export UseSharedCompilation=false  # disable Roslyn compile server
+export UseSharedCompilation=false # disable Roslyn compile server
 
 # path
 typeset -aU path fpath
 path=(
-    $HOME/.local/bin(N/)
-    $HOME/.orbstack/bin(N/)
-    $HOME/.cache/.bun/bin(N/)
-    $PNPM_HOME/bin(N/)
-    $HOME/.asdf/shims(N/)
-    $HOME/.dotnet/tools(N/)
-    $HOME/.asdf/installs/rust/*/bin(N/)
-    $SDKMAN_DIR/candidates/grails/current/bin(N/)
-    /usr/local/share/dotnet(N/)
-    $HOMEBREW_PREFIX/opt/libpq/bin(N/)
-    $HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
-    $HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
-    $HOMEBREW_PREFIX/{bin,sbin}(N/)
-    $path
+	$HOME/.local/bin(N/)
+	$HOME/.orbstack/bin(N/)
+	$HOME/.cache/.bun/bin(N/)
+	$PNPM_HOME/bin(N/)
+	$HOME/.asdf/shims(N/)
+	$HOME/.dotnet/tools(N/)
+	$HOME/.asdf/installs/rust/*/bin(N/)
+	$SDKMAN_DIR/candidates/grails/current/bin(N/)
+	/usr/local/share/dotnet(N/)
+	$HOMEBREW_PREFIX/opt/libpq/bin(N/)
+	$HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
+	$HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
+	$HOMEBREW_PREFIX/{bin,sbin}(N/)
+	$path
 )
 fpath=(
-    /Applications/OrbStack.app/Contents/{MacOS,Resources}/completions/zsh(N/)
-    $HOME/.config/granted/zsh_autocomplete/{assume,granted}(N/)
-    $XDG_DATA_HOME/zsh-completions(N/)
-    $HOMEBREW_PREFIX/share/zsh/site-functions
-    $fpath
+	/Applications/OrbStack.app/Contents/{MacOS,Resources}/completions/zsh(N/)
+	$HOME/.config/granted/zsh_autocomplete/{assume,granted}(N/)
+	$XDG_DATA_HOME/zsh-completions(N/)
+	$HOMEBREW_PREFIX/share/zsh/site-functions
+	$fpath
 )

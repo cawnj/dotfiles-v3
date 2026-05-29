@@ -3,7 +3,7 @@ source $XDG_CACHE_HOME/p10k-instant-prompt-${(%):-%n}.zsh
 
 # zcomet
 if [[ ! -f $ZDOTDIR/.zcomet/bin/zcomet.zsh ]]; then
-    git clone https://github.com/agkozak/zcomet.git $ZDOTDIR/.zcomet/bin
+	git clone https://github.com/agkozak/zcomet.git $ZDOTDIR/.zcomet/bin
 fi
 source $ZDOTDIR/.zcomet/bin/zcomet.zsh
 
