@@ -35,7 +35,7 @@ brew "httpie"
 # dev tools
 brew "just"
 brew "git-lfs"
-cask "claude-code"
+cask "claude-code@latest"
 brew "raine/workmux/workmux"
 brew "sesh"
 brew "datadog-labs/pack/pup"

@@ -5,7 +5,9 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "ask": ["Bash(aws*)"],
+    "ask": [
+      "Bash(aws*)"
+    ],
     "defaultMode": "auto"
   },
   "model": "opus[1m]",
@@ -68,7 +70,7 @@
       }
     }
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-daltonized",
