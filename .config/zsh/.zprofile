@@ -39,6 +39,7 @@ path=(
 	$HOMEBREW_PREFIX/opt/mysql-client/bin(N/)
 	$HOMEBREW_PREFIX/opt/*/libexec/gnubin(N/)
 	$HOMEBREW_PREFIX/{bin,sbin}(N/)
+	/usr/local/bin(N/)
 	$path
 )
 fpath=(
