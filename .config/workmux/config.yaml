@@ -12,9 +12,10 @@ panes:
 files:
   symlink:
     - docs/superpowers
+    - devbox.json
+    - .claude/settings.local.json
 
 sandbox:
-  enabled: false
-  agent_config_dir: ~/.claude-sandbox
-  container:
-    runtime: docker
+  enabled: true
+  backend: lima
+  toolchain: auto

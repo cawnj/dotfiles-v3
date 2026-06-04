@@ -40,6 +40,7 @@ brew "raine/workmux/workmux"
 brew "sesh"
 brew "datadog-labs/pack/pup"
 brew "pulumi"
+brew "lima"
 
 # aws
 brew "awscli"
