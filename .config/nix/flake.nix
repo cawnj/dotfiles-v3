@@ -11,12 +11,9 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "aarch64-linux" "x86_64-linux" ];
 
-      perSystem = { config, pkgs, ... }: {
-        packages.dotnet = pkgs.callPackage ./tools/dotnet.nix { };
-        packages.default = config.packages.dotnet;
-
-        devShells.default = pkgs.mkShell {
-          packages = [
+      perSystem = { config, pkgs, ... }:
+        let
+          tools = [
             pkgs.ripgrep
             pkgs.fd
             pkgs.jq
@@ -24,7 +21,17 @@
             pkgs.nodejs_24
             config.packages.dotnet
           ];
+        in
+        {
+          packages.dotnet = pkgs.callPackage ./tools/dotnet.nix { };
+          packages.devbox = pkgs.buildEnv {
+            name = "devbox";
+            paths = tools;
+          };
+
+          devShells.default = pkgs.mkShell {
+            packages = tools;
+          };
         };
-      };
     };
 }
