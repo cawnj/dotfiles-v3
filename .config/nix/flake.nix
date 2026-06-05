@@ -20,7 +20,6 @@
             pkgs.gh
             pkgs.nodejs_24
             pkgs.zsh
-            pkgs.oh-my-zsh
             config.packages.dotnet
           ];
         in
