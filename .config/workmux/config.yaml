@@ -20,3 +20,5 @@ sandbox:
   backend: lima
   toolchain: devbox
   agent_config_dir: ~/.claude-sandbox
+  env_passthrough:
+    - GITHUB_PACKAGES_TOKEN

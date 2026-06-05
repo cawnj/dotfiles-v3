@@ -39,6 +39,9 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
   . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
 fi
 
+# secrets
+[ -f "$HOME/.zshrc_secrets" ] && source "$HOME/.zshrc_secrets"
+
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=1000000000
