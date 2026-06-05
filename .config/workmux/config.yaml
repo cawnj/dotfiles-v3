@@ -22,3 +22,5 @@ sandbox:
   agent_config_dir: ~/.claude-sandbox
   env_passthrough:
     - GITHUB_PACKAGES_TOKEN
+  lima:
+    memory: 8GiB
