@@ -12,10 +12,17 @@ panes:
 files:
   symlink:
     - docs/superpowers
-    - devbox.json
+    - flake.nix
     - .claude/settings.local.json
 
 sandbox:
   enabled: true
   backend: lima
-  toolchain: auto
+  toolchain: flake
+  lima:
+    # shared .claude folder
+    provision: |
+      #!/bin/bash
+      set -eux
+      sudo ln -sfn "$HOME/.claude" "/Users/$USER/.claude"
+      echo "export CLAUDE_CONFIG_DIR=/Users/$USER/.claude" >> "$HOME/.profile"

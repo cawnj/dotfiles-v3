@@ -34,6 +34,11 @@ zsh-defer zcomet load zdharma-continuum/fast-syntax-highlighting
 # tools
 zsh-defer source "$HOME/.asdf/plugins/java/set-java-home.zsh"
 
+# nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+
 # history
 HISTFILE=$ZDOTDIR/.zsh_history
 HISTSIZE=1000000000
