@@ -24,10 +24,4 @@ sandbox:
   enabled: true
   backend: lima
   toolchain: flake
-  lima:
-    # shared .claude folder
-    provision: |
-      #!/bin/bash
-      set -eux
-      sudo ln -sfn "$HOME/.claude" "/Users/$USER/.claude"
-      echo "export CLAUDE_CONFIG_DIR=/Users/$USER/.claude" >> "$HOME/.profile"
+  agent_config_dir: ~/.claude-sandbox
