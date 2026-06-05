@@ -12,8 +12,13 @@ panes:
 files:
   symlink:
     - docs/superpowers
-    - flake.nix
     - .claude/settings.local.json
+  copy:
+    - flake.nix
+
+# workaround since nix won't read an untracked flake.nix
+post_create:
+  - git add -fN flake.nix
 
 sandbox:
   enabled: true
