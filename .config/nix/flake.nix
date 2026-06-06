@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -11,27 +11,30 @@
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "aarch64-linux" "x86_64-linux" ];
 
-      perSystem = { config, pkgs, ... }:
+      perSystem = { config, pkgs, system, ... }:
         let
-          tools = [
-            pkgs.ripgrep
-            pkgs.fd
-            pkgs.jq
-            pkgs.gh
-            pkgs.nodejs_24
-            pkgs.zsh
-            config.packages.dotnet
-          ];
+          nvSources = pkgs.callPackage ./_sources/generated.nix { };
         in
         {
-          packages.dotnet = pkgs.callPackage ./tools/dotnet.nix { };
-          packages.devbox = pkgs.buildEnv {
-            name = "devbox";
-            paths = tools;
+          packages.dotnet = pkgs.callPackage ./packages/dotnet.nix { };
+          packages.pup = pkgs.callPackage ./packages/pup.nix {
+            inherit (nvSources."pup-${system}") version src;
           };
-
+          packages.default = pkgs.buildEnv {
+            name = "devbox-tools";
+            paths = [
+              pkgs.ripgrep
+              pkgs.fd
+              pkgs.jq
+              pkgs.gh
+              pkgs.nodejs_24
+              pkgs.zsh
+              config.packages.dotnet
+              config.packages.pup
+            ];
+          };
           devShells.default = pkgs.mkShell {
-            packages = tools;
+            packages = [ config.packages.default ];
           };
         };
     };

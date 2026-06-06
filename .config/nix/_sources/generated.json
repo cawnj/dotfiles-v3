@@ -1,0 +1,30 @@
+{
+    "pup-aarch64-linux": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "pup-aarch64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-ZeFKw2avqnYbU3YY94RJQOCnUmu2GA8vLybc9Exk6HY=",
+            "type": "tarball",
+            "url": "https://github.com/DataDog/pup/releases/download/v0.65.4/pup_0.65.4_Linux_arm64.tar.gz"
+        },
+        "version": "0.65.4"
+    },
+    "pup-x86_64-linux": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "pup-x86_64-linux",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "sha256": "sha256-EVnPuFJP+dT7RdCvelQcHCgaqKyubqyGGaFXxgeNleo=",
+            "type": "tarball",
+            "url": "https://github.com/DataDog/pup/releases/download/v0.65.4/pup_0.65.4_Linux_x86_64.tar.gz"
+        },
+        "version": "0.65.4"
+    }
+}

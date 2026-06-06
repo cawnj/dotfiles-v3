@@ -1,0 +1,9 @@
+[pup-aarch64-linux]
+src.github = "DataDog/pup"
+src.prefix = "v"
+fetch.tarball = "https://github.com/DataDog/pup/releases/download/v$ver/pup_$ver_Linux_arm64.tar.gz"
+
+[pup-x86_64-linux]
+src.github = "DataDog/pup"
+src.prefix = "v"
+fetch.tarball = "https://github.com/DataDog/pup/releases/download/v$ver/pup_$ver_Linux_x86_64.tar.gz"
