@@ -30,6 +30,7 @@
               pkgs.nodejs_24
               pkgs.zsh
               pkgs.fish
+              pkgs.fishPlugins.plugin-git
               config.packages.dotnet
               config.packages.pup
             ];
