@@ -42,4 +42,4 @@ sandbox:
 
       # fish config
       mkdir -p ~/.config/fish
-      cp /opt/workmux/fish.config ~/.config/fish/config.fish
+      cp /opt/workmux/config.fish ~/.config/fish/config.fish
