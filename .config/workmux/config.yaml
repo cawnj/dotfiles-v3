@@ -40,11 +40,6 @@ sandbox:
       # add nix to PATH
       echo 'export PATH="/nix/var/nix/profiles/default/bin:$PATH"' >> ~/.bashrc
 
-      # fish plugins
+      # fish config
       mkdir -p ~/.config/fish
-      cat > ~/.config/fish/config.fish <<'FISHCONFIG'
-      if not functions -q fisher
-          curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-          fisher install jorgebucaran/fisher jhillyerd/plugin-git
-      end
-      FISHCONFIG
+      cp /opt/workmux/fish.config ~/.config/fish/config.fish
