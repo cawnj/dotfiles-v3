@@ -26,5 +26,12 @@ sandbox:
   env:
     DOTNET_CLI_TELEMETRY_OPTOUT: "1"
     UseSharedCompilation: "false"  # disable Roslyn compile server
+  extra_mounts:
+    - host_path: ~/.config/workmux
+      guest_path: /opt/workmux
   lima:
     memory: 4GiB
+    provision: |
+      git config --global commit.gpgsign true
+      git config --global gpg.format ssh
+      git config --global user.signingkey /opt/workmux/sandbox.pub
