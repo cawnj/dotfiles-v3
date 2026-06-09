@@ -59,16 +59,9 @@
     "command": "~/.claude/statusline.jq"
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true,
-    "caveman@caveman": true
+    "superpowers@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
-    "caveman": {
-      "source": {
-        "source": "github",
-        "repo": "JuliusBrussee/caveman"
-      }
-    },
     "claude-plugins-official": {
       "source": {
         "source": "github",
