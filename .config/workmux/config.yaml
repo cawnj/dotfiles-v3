@@ -22,5 +22,9 @@ sandbox:
   agent_config_dir: ~/.claude-sandbox
   env_passthrough:
     - GITHUB_PACKAGES_TOKEN
+    - NODE_AUTH_TOKEN
+  env:
+    DOTNET_CLI_TELEMETRY_OPTOUT: "1"
+    UseSharedCompilation: "false"  # disable Roslyn compile server
   lima:
-    memory: 8GiB
+    memory: 4GiB
