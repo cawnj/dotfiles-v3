@@ -29,6 +29,7 @@
               pkgs.gh
               pkgs.nodejs_24
               pkgs.zsh
+              pkgs.fish
               config.packages.dotnet
               config.packages.pup
             ];
