@@ -32,14 +32,9 @@ sandbox:
   lima:
     memory: 4GiB
     provision: |
-      # git commit signing
-      git config --global commit.gpgsign true
-      git config --global gpg.format ssh
-      git config --global user.signingkey /opt/workmux/sandbox.pub
-
-      # add nix to PATH
+      # add nix to login shell's PATH
       echo 'export PATH="/nix/var/nix/profiles/default/bin:$PATH"' >> ~/.bashrc
 
-      # fish config
-      mkdir -p ~/.config/fish
-      cp /opt/workmux/config.fish ~/.config/fish/config.fish
+      # install configs
+      install -D /opt/workmux/sandbox.fish ~/.config/fish/config.fish
+      install -D /opt/workmux/sandbox.gitconfig ~/.gitconfig

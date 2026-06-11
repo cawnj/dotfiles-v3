@@ -27,6 +27,8 @@
               pkgs.fd
               pkgs.jq
               pkgs.gh
+              pkgs.git
+              pkgs.git-lfs
               pkgs.nodejs_24
               pkgs.zsh
               pkgs.fish
