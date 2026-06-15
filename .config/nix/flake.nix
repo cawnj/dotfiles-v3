@@ -30,6 +30,7 @@
               pkgs.git
               pkgs.git-lfs
               pkgs.nodejs_24
+              pkgs.uv
               pkgs.zsh
               pkgs.fish
               config.packages.dotnet
