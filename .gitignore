@@ -30,3 +30,6 @@ Temporary Items
 
 # local claude settings
 **/.claude/settings.local.json
+
+# serena
+.serena

@@ -1,7 +1,8 @@
 if status is-interactive
     if not functions -q fisher
         curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source
-        fisher install jorgebucaran/fisher jhillyerd/plugin-git jorgebucaran/hydro
+        fisher install jorgebucaran/fisher
+        fisher install jhillyerd/plugin-git jorgebucaran/hydro
     end
 
     set -g hydro_color_pwd blue
