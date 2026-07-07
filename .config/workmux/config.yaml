@@ -11,6 +11,14 @@ panes:
   - split: horizontal
     focus: true
 
+post_create:
+  # pre-warm Serena's per-worktree symbol cache so the first C# op doesn't trigger a full Roslyn index
+  - nohup serena project index >/dev/null 2>&1 &
+  # a teammate committed files under docs/superpowers (my cross-worktree symlink target); the checkout
+  # materializes them and clobbers the symlink. skip-worktree stops git tracking them in this worktree
+  # (keeps `git status` clean), then re-point the symlink at the main worktree's shared store.
+  - git ls-files docs/superpowers | xargs -r git update-index --skip-worktree && rm -rf docs/superpowers && ln -sfn ../../../bl-platform/docs/superpowers docs/superpowers
+
 files:
   symlink:
     - .claude/settings.local.json
@@ -36,8 +44,17 @@ sandbox:
     - host_path: ~/.config/workmux
       guest_path: /opt/workmux
   lima:
-    memory: 4GiB
+    memory: 8GiB
     provision: |
+      # 4GiB swapfile so memory reclaim has somewhere to spill instead of thrashing kswapd0
+      if [ ! -f /swapfile ]; then
+        sudo fallocate -l 4G /swapfile || sudo dd if=/dev/zero of=/swapfile bs=1M count=4096
+        sudo chmod 600 /swapfile
+        sudo mkswap /swapfile
+        sudo swapon /swapfile
+        grep -q '^/swapfile ' /etc/fstab || echo '/swapfile none swap sw 0 0' | sudo tee -a /etc/fstab
+      fi
+
       # add nix to login shell's PATH
       echo 'export PATH="/nix/var/nix/profiles/default/bin:$PATH"' >> ~/.bashrc
 

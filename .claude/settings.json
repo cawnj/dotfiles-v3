@@ -5,10 +5,16 @@
   },
   "includeCoAuthoredBy": false,
   "permissions": {
-    "ask": [
-      "Bash(aws*)"
+    "deny": [
+      "Bash(aws*)",
+      "Bash(* aws*)",
+      "Bash(pulumi*)",
+      "Bash(* pulumi*)"
     ],
-    "defaultMode": "auto"
+    "defaultMode": "auto",
+    "additionalDirectories": [
+      "/Users/cj/Documents/notes"
+    ]
   },
   "hooks": {
     "PreToolUse": [
@@ -27,6 +33,15 @@
           {
             "type": "command",
             "command": "serena-hooks auto-approve --client=claude-code"
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
           }
         ]
       }
@@ -108,6 +123,16 @@
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       }
+    }
+  },
+  "sandbox": {
+    "filesystem": {
+      "allowWrite": [
+        "/Users/cj/Documents/notes"
+      ],
+      "allowRead": [
+        "/Users/cj/Documents/notes"
+      ]
     }
   },
   "effortLevel": "high",
