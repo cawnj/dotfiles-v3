@@ -7,17 +7,19 @@ agent: 'claude --system-prompt="$(serena prompts print-cc-system-prompt-override
 status_format: false
 
 panes:
-  - command: workmux sandbox agent
+  - command: <agent>
   - split: horizontal
     focus: true
 
 post_create:
   # pre-warm Serena's per-worktree symbol cache so the first C# op doesn't trigger a full Roslyn index
   - nohup serena project index >/dev/null 2>&1 &
-  # a teammate committed files under docs/superpowers (my cross-worktree symlink target); the checkout
-  # materializes them and clobbers the symlink. skip-worktree stops git tracking them in this worktree
-  # (keeps `git status` clean), then re-point the symlink at the main worktree's shared store.
-  - git ls-files docs/superpowers | xargs -r git update-index --skip-worktree && rm -rf docs/superpowers && ln -sfn ../../../bl-platform/docs/superpowers docs/superpowers
+  # Point this worktree's docs/superpowers at the shared Obsidian vault store (flat, all repos).
+  # NOTE: vault lives on the host; if the Lima sandbox is ever enabled, mount ~/Documents/notes or this breaks.
+  # 1) skip-worktree any tracked files there (e.g. bl-platform) so they don't show in `git status`;
+  # 2) add docs/superpowers to this repo's local exclude so the untracked symlink stays clean too;
+  # 3) replace whatever's there with an absolute symlink to the vault.
+  - mkdir -p "$HOME/Documents/notes/superpowers" && git ls-files docs/superpowers | xargs -r git update-index --skip-worktree; EX="$(git rev-parse --git-path info/exclude)"; grep -qxF docs/superpowers "$EX" 2>/dev/null || echo docs/superpowers >> "$EX"; rm -rf docs/superpowers && mkdir -p docs && ln -sfn "$HOME/Documents/notes/superpowers" docs/superpowers
 
 files:
   symlink:
@@ -26,10 +28,9 @@ files:
     - .serena/project.local.yml
     - .serena/memories
     - devbox.json
-    - docs/superpowers
 
 sandbox:
-  enabled: true
+  enabled: false
   backend: lima
   toolchain: devbox
   agent_config_dir: ~/.sandbox-config/{agent}
