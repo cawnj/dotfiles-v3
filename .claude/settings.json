@@ -1,10 +1,14 @@
 {
-  "env": {
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "8192",
-    "MAX_THINKING_TOKENS": "1024"
-  },
   "includeCoAuthoredBy": false,
   "permissions": {
+    "allow": [
+      "Bash(gh pr list:*)",
+      "Bash(gh pr view:*)",
+      "Bash(gh run list:*)",
+      "Bash(gh run rerun:*)",
+      "Bash(gh run view:*)",
+      "Bash(workmux send:*)"
+    ],
     "deny": [
       "Bash(aws*)",
       "Bash(* aws*)",
@@ -17,57 +21,6 @@
     ]
   },
   "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "serena-hooks remind --client=claude-code"
-          }
-        ]
-      },
-      {
-        "matcher": "mcp__serena__*",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "serena-hooks auto-approve --client=claude-code"
-          }
-        ]
-      },
-      {
-        "matcher": "Bash",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "rtk hook claude"
-          }
-        ]
-      }
-    ],
-    "SessionStart": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "serena-hooks activate --client=claude-code"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "matcher": "",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "serena-hooks cleanup --client=claude-code"
-          }
-        ]
-      }
-    ],
     "Notification": [
       {
         "matcher": "permission_prompt|elicitation_dialog",
@@ -85,6 +38,28 @@
           {
             "type": "command",
             "command": "workmux set-window-status working"
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "rtk hook claude"
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "matcher": "startup|resume|clear|fork",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "workmux register-agent"
           }
         ]
       }
@@ -115,7 +90,9 @@
     "command": "~/.claude/statusline.jq"
   },
   "enabledPlugins": {
-    "superpowers@claude-plugins-official": true
+    "pulumi@pulumi-agent-skills": true,
+    "superpowers@claude-plugins-official": true,
+    "vanta-mcp-plugin@claude-plugins-official": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -123,8 +100,15 @@
         "source": "github",
         "repo": "anthropics/claude-plugins-official"
       }
+    },
+    "pulumi-agent-skills": {
+      "source": {
+        "source": "github",
+        "repo": "pulumi/agent-skills"
+      }
     }
   },
+  "outputStyle": "simple-english",
   "sandbox": {
     "filesystem": {
       "allowWrite": [
@@ -135,6 +119,7 @@
       ]
     }
   },
+  "feedbackDrafts": "off",
   "effortLevel": "high",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
