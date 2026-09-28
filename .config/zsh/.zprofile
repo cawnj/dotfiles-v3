@@ -12,6 +12,7 @@ export HOMEBREW_REPOSITORY=$HOMEBREW_PREFIX
 export HOMEBREW_CELLAR=$HOMEBREW_PREFIX/Cellar
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_SUDO=1
 
 # fzf
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --hidden --follow --exclude .git"
