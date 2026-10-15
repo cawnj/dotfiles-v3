@@ -7,7 +7,9 @@
       "Bash(gh run list:*)",
       "Bash(gh run rerun:*)",
       "Bash(gh run view:*)",
-      "Bash(workmux send:*)"
+      "Bash(workmux send:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [
       "Bash(aws*)",
@@ -91,8 +93,10 @@
   },
   "enabledPlugins": {
     "pulumi@pulumi-agent-skills": true,
-    "superpowers@claude-plugins-official": true,
-    "vanta-mcp-plugin@claude-plugins-official": true
+    "superpowers@claude-plugins-official": false,
+    "vanta-mcp-plugin@claude-plugins-official": false,
+    "ponytail@ponytail": true,
+    "i-have-adhd@i-have-adhd": true
   },
   "extraKnownMarketplaces": {
     "claude-plugins-official": {
@@ -106,9 +110,20 @@
         "source": "github",
         "repo": "pulumi/agent-skills"
       }
+    },
+    "ponytail": {
+      "source": {
+        "source": "github",
+        "repo": "DietrichGebert/ponytail"
+      }
+    },
+    "i-have-adhd": {
+      "source": {
+        "source": "github",
+        "repo": "ayghri/i-have-adhd"
+      }
     }
   },
-  "outputStyle": "simple-english",
   "sandbox": {
     "filesystem": {
       "allowWrite": [
@@ -120,7 +135,9 @@
     }
   },
   "feedbackDrafts": "off",
-  "effortLevel": "high",
+  "effortLevel": "medium",
+  "model": "opus",
+  "autoCompactWindow": 200000,
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
   "theme": "dark-daltonized",
