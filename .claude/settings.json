@@ -22,6 +22,18 @@
       "/Users/cj/Documents/notes"
     ]
   },
+  "model": "opus",
+  "skillOverrides": {
+    "review-army": "off",
+    "architecture-decision-records": "off",
+    "context7-mcp": "off",
+    "grilling": "off",
+    "coordinator": "off",
+    "merge": "off",
+    "open-pr": "off",
+    "rebase": "off",
+    "worktree": "off"
+  },
   "hooks": {
     "Notification": [
       {
@@ -136,7 +148,6 @@
   },
   "feedbackDrafts": "off",
   "effortLevel": "medium",
-  "model": "opus",
   "autoCompactWindow": 200000,
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
